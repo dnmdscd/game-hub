@@ -4,10 +4,10 @@ import CropImageURL from '../Services/image-url';
 
 interface Props{
   onSelectGenre: (genre: Genre)=> void;
-  selectedGenre: Genre | null
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({onSelectGenre}: Props) => {
+const GenreList = ({selectedGenre,onSelectGenre}: Props) => {
     const { data, isloading, error} = useGenres();
     if (error) return null;
     if (isloading) return <Spinner/>;
