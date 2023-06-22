@@ -1,4 +1,4 @@
-import noImage from ",/assets/noImage.webp";
+import noImage from "../assets/noImage.webp";
 const CropImageURL = (url:string) => {
   if (!url) return noImage;
 
