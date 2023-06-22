@@ -9,7 +9,7 @@ const PlatformSelector = () => {
     <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown/>}>Platforms</MenuButton>
         <MenuList>
-            {data.map(platform=> <MenuList key={platform.id}>{platform.name}</MenuList>)}
+            {data.map(platform=> <MenuItem key={platform.id}>{platform.name}</MenuItem>)}
         </MenuList>
     </Menu>
   )
