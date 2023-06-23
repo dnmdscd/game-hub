@@ -16,7 +16,7 @@ const Emoji = ({rating} : Props) => {
         5: {src: BullsEye, alt: 'Exceptional', boxSize:"35px"}
     }
   return (
-    <Image {...emojiMap[rating]} boxSize="25px"/>
+    <Image {...emojiMap[rating]}/>
   )
 }
 
