@@ -4,10 +4,10 @@ import CropImageURL from '../Services/image-url';
 
 interface Props{
   onSelectGenre: (genre: Genre)=> void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({selectedGenre,onSelectGenre}: Props) => {
+const GenreList = ({selectedGenreId, onSelectGenre}: Props) => {
     const { data, isLoading, error} = useGenres();
 
     if (error) return null;
@@ -21,7 +21,7 @@ const GenreList = ({selectedGenre,onSelectGenre}: Props) => {
         <ListItem key={genre.id} paddingY="5px">
           <HStack>
             <Image src={CropImageURL(genre.image_background)} boxSize="32px" borderRadius={8} objectFit="cover"/>
-            <Button whiteSpace="normal" textAlign="left" fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}  onClick={()=> onSelectGenre(genre)} fontSize="lg" variant="link">{genre.name}</Button>
+            <Button whiteSpace="normal" textAlign="left" fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal'}  onClick={()=> onSelectGenre(genre)} fontSize="lg" variant="link">{genre.name}</Button>
           </HStack>
         </ListItem>)}
       </List>
